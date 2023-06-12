@@ -13,8 +13,12 @@ You'll need:
 
 * Docker
 * `docker compose` >= 1.28
+*   $ ubuntu-drivers devices  // get the GPU Model
+*   $ sudo ubuntu-drivers autoinstall // to install the recommended driver
+*   $ https://en.wikipedia.org/wiki/CUDA#:~:text=Tesla%20P100-,6.1,-GP102%2C%20GP104%2C%20GP106 // CHeck compute capability of your GPU
 * An NVIDIA GPU with Compute Capability >= 6.0 and enough VRAM to run the model you want.
-* [`nvidia-docker`](https://github.com/NVIDIA/nvidia-docker) https://www.ibm.com/docs/en/maximo-vi/8.2.0?topic=planning-installing-docker-nvidia-docker2
+* [`nvidia-docker`](https://github.com/NVIDIA/nvidia-docker) 
+*   Follow to install nvidia-docker2 package https://www.ibm.com/docs/en/maximo-vi/8.2.0?topic=planning-installing-docker-nvidia-docker2
 * `curl` and `zstd` for downloading and unpacking the models.
 
 Note that the VRAM requirements listed by `setup.sh` are *total* -- if you have multiple GPUs, you can split the model across them. So, if you have two NVIDIA RTX 3080 GPUs, you *should* be able to run the 6B model by putting half on each GPU.
